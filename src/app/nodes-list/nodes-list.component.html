@@ -1,0 +1,23 @@
+<div class="row justify-content-end">
+    <div class="col-md-4 mt-4 mb-4 text-center">
+        Search Results: <b>{{ results.length }}</b>
+    </div>
+    <div class="col-md-4 mt-4 mb-4">
+        <mdb-form-control>
+            <input mdbInput type="text" id="author" class="form-control" (change)="onSearchChange($event)" />
+            <label mdbLabel class="form-label" for="author">Search by Author</label>
+        </mdb-form-control>
+    </div>
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="results.length > 0; else empty">
+    <div class="col" *ngFor="let node of results">
+        <app-node-card [node]="node"></app-node-card>
+    </div>
+</div>
+<ng-template #empty>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col-md-12 text-center">There is no results.</div>
+    </div>
+</ng-template>

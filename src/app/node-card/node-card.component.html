@@ -1,0 +1,14 @@
+<div class="card h-100">
+    <img src="https://mdbootstrap.com/img/new/standard/city/041.webp" class="card-img-top" alt="..." tabindex="0"
+        role="button" trigger="focus" placement="right" mdbPopover="{{ node.issue.description }}"
+        mdbPopoverTitle="{{ node.issue.title }}" />
+    <div class="card-body">
+        <div class="card-title text-ellipsis">
+            <a href="{{ node.issue.webUrl }}" target="_blank"><b>{{ node.issue.title }}</b></a>
+        </div>
+        <p class="card-text">
+            <small><b>author</b>: {{ node.user.username }}</small>
+            <small><b>spentAt</b>: {{ node.spentAt.substring(0, 10) }}</small>
+        </p>
+    </div>
+</div>
